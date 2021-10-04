@@ -40,43 +40,11 @@ export class LoginPage implements OnInit {
         alert('User ' + this.input.username + ' has been logged in');
         localStorage.setItem('access_token', response.token);
         localStorage.setItem('user_id', response.id);
-        location.reload();
+        this.router.navigate(['/index']);
       },
       error => {
         console.log('error', error);
       }
     );
   }
-
-  onLogout() {
-    this.userId = {
-      "key": localStorage.getItem('user_id')
-    }
-
-    console.log(this.userId);
-    this.userService.logoutUser(this.userId).subscribe(
-      response => {
-        localStorage.removeItem('access_token');
-        localStorage.removeItem('user_id');
-        location.reload();
-      },
-      error => {
-        console.log(error);
-      }
-    )
-    // localStorage.removeItem('access_token');
-    // location.reload();
-  }
-
-  getUserData() {
-    this.userService.getUsers(localStorage.getItem('user_id')).subscribe(
-      response => {
-        console.log(response);
-      },
-      error => {
-        console.log('error', error);
-      }
-    );
-  }
-
 }
