@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="text-align: center;">
+    <h1>
+      <span>{{ title }} app is running!</span>
+    </h1>
+    <input [(ngModel)] = "input.username" placeholder="username"><br><br>
+    <input [(ngModel)] = "input.password" type="password" placeholder="password"><br><br>
+    <!-- <input [(ngModel)] = "register.email" placeholder="email"><br><br> -->
+    <button (click) = "onRegister()">Register User</button>
+    <button (click) = "onLogin()">Login</button>
+    <button (click) = "onLogout()">Logout</button>
+    <button (click) = "getUserData()">Users</button>
+    <button (click) = "getMovieData()">Movies</button>
+    <a class="navbar-item" routerLink='new'>New Page</a>
+    <input [(ngModel)] = "pmovies.title" placeholder="title"><br><br>
+    <input [(ngModel)] = "pmovies.description"  placeholder="description"><br><br>
+    <button (click) = "postMovieData()">Post Movies</button>
+  </div>
+
+</ion-content>
