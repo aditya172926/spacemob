@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
   onRegister() {
     this.userService.registerNewUser(this.input).subscribe(
       response => {
-        alert('User ' + this.input.username + ' has been created');
+        console.log('Created username: ', this.input.username);
       },
       error => {
         console.log('error', error);
@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
   onLogin() {
     this.userService.loginUser(this.input).subscribe(
       response => {
-        alert('User ' + this.input.username + ' has been logged in');
+        console.log('Logged In username: ', this.input.username);
         localStorage.setItem('access_token', response.token);
         localStorage.setItem('user_id', response.id);
         this.router.navigate(['/index']);

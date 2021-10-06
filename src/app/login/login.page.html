@@ -9,11 +9,15 @@
     <h1>
       <span>{{ title }} app is running!</span>
     </h1>
-    <input [(ngModel)] = "input.username" placeholder="username"><br><br>
-    <input [(ngModel)] = "input.password" type="password" placeholder="password"><br><br>
     <!-- <input [(ngModel)] = "register.email" placeholder="email"><br><br> -->
-    <button (click) = "onRegister()">Register User</button>
-    <button (click) = "onLogin()">Login</button>
+    <div class="signform">
+      <ion-input [(ngModel)]="input.username" class="username" type="text" placeholder="username"></ion-input><br><br>
+      <ion-input [(ngModel)]="input.password" class="password" type="password" placeholder="password"></ion-input><br><br>
+    </div>
+    <div class="actionButton">
+      <button (click)="onRegister()" class="signUp">Register User</button><br><br>
+      <button (click)="onLogin()" class="login">Login</button>
+    </div>
   </div>
 
 </ion-content>
