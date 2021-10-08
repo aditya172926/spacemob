@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   authHeaders = new HttpHeaders({ 'Authorization': 'Token ' + localStorage.getItem('access_token') });
-  httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
+  httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
   registerNewUser(userData): Observable<any> {

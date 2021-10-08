@@ -13,8 +13,9 @@
     <swiper #swiper>
       <ng-template swiperSlide>
         <div class="signform">
-          <ion-input [(ngModel)]="input.username" class="username" type="text" placeholder="username"></ion-input><br><br>
-          <ion-input [(ngModel)]="input.password" class="password" type="password" placeholder="password"></ion-input><br><br>
+          <ion-input [(ngModel)]="registerInput.username" class="username" type="text" placeholder="username"></ion-input><br><br>
+          <ion-input [(ngModel)]="registerInput.email" class="email" type="email" placeholder="email"></ion-input><br><br>
+          <ion-input [(ngModel)]="registerInput.password" class="password" type="password" placeholder="password"></ion-input>
         </div>
         <div class="actionButton">
           <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="onRegister()" class="signUp">Register User</ion-button><br><br>

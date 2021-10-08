@@ -12,11 +12,17 @@ export class LoginPage implements OnInit {
   userId;
   input;
   pmovies;
-  title: string = 'Web';
+  title = 'Web';
+  registerInput;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.registerInput = {
+      username: '',
+      password: '',
+      email: ''
+    };
     this.input = {
       username: '',
       password: ''
@@ -24,9 +30,9 @@ export class LoginPage implements OnInit {
     };
   }
   onRegister() {
-    this.userService.registerNewUser(this.input).subscribe(
+    this.userService.registerNewUser(this.registerInput).subscribe(
       response => {
-        console.log('Created username: ', this.input.username);
+        console.log('Created username: ', this.registerInput.username);
       },
       error => {
         console.log('error', error);
