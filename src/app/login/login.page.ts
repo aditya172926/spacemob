@@ -20,6 +20,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.registerInput = {
       username: '',
+      first_name: '',
+      last_name: '',
       password: '',
       email: ''
     };
@@ -33,6 +35,9 @@ export class LoginPage implements OnInit {
     this.userService.registerNewUser(this.registerInput).subscribe(
       response => {
         console.log('Created username: ', this.registerInput.username);
+        this.input.username = response.data.username;
+        this.input.password = response.data.password;
+        this.onLogin();
       },
       error => {
         console.log('error', error);
