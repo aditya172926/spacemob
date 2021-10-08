@@ -10,14 +10,26 @@
       <span>{{ title }} app is running!</span>
     </h1>
     <!-- <input [(ngModel)] = "register.email" placeholder="email"><br><br> -->
-    <div class="signform">
-      <ion-input [(ngModel)]="input.username" class="username" type="text" placeholder="username"></ion-input><br><br>
-      <ion-input [(ngModel)]="input.password" class="password" type="password" placeholder="password"></ion-input><br><br>
-    </div>
-    <div class="actionButton">
-      <button (click)="onRegister()" class="signUp">Register User</button><br><br>
-      <button (click)="onLogin()" class="login">Login</button>
-    </div>
+    <swiper #swiper>
+      <ng-template swiperSlide>
+        <div class="signform">
+          <ion-input [(ngModel)]="input.username" class="username" type="text" placeholder="username"></ion-input><br><br>
+          <ion-input [(ngModel)]="input.password" class="password" type="password" placeholder="password"></ion-input><br><br>
+        </div>
+        <div class="actionButton">
+          <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="onRegister()" class="signUp">Register User</ion-button><br><br>
+        </div>
+      </ng-template>
+      <ng-template swiperSlide>
+        <div class="signform">
+          <ion-input [(ngModel)]="input.username" class="username" type="text" placeholder="username"></ion-input><br><br>
+          <ion-input [(ngModel)]="input.password" class="password" type="password" placeholder="password"></ion-input><br><br>
+        </div>
+        <div class="actionButton">
+          <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="onLogin()" class="login">Login</ion-button>
+        </div>
+      </ng-template>
+    </swiper>
   </div>
 
 </ion-content>
