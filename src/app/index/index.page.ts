@@ -11,10 +11,15 @@ import { Router } from '@angular/router';
 })
 export class IndexPage implements OnInit {
   userId;
+  userdata;
 
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.userdata = {
+      author: localStorage.getItem('user_id'),
+      origin: ''
+    };
   }
 
   getUserData() {
@@ -41,7 +46,28 @@ export class IndexPage implements OnInit {
       error => {
         console.log('Error', error);
       }
-    )
+    );
+  }
+  userDataGet() {
+    this.userService.getUpdatedUsers(localStorage.getItem('user_id')).subscribe(
+      response => {
+        console.log(response);
+      },
+      error  => {
+        console.log(error);
+      }
+    );
+  }
+
+  userDataPost() {
+    this.userService.postUpdateUsers(this.userdata).subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
