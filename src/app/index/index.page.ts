@@ -50,6 +50,8 @@ export class IndexPage implements OnInit {
     this.userService.getUpdatedUsers(localStorage.getItem('user_id')).subscribe(
       response => {
         console.log(response);
+        console.log(response.data);
+
       },
       error  => {
         console.log(error);

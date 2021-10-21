@@ -26,7 +26,7 @@ export class UserService {
     return this.http.get('http://127.0.0.1:8000/api/users/' + id + '/', {headers: this.authHeaders});
   }
   getUpdatedUsers(id): Observable<any> {
-    return this.http.get('http://127.0.0.1:8000/api/data/' + id, {headers: this.authHeaders});
+    return this.http.get('http://127.0.0.1:8000/api/data', {headers: this.authHeaders});
   }
   postUpdateUsers(data): Observable<any> {
     return this.http.post('http://127.0.0.1:8000/api/data/', data, {headers: this.authHeaders});
