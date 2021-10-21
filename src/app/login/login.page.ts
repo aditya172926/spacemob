@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
       response => {
         console.log('Logged In username: ', this.input.username);
         localStorage.setItem('access_token', response.token);
-        localStorage.setItem('user_id', response.id);
+        localStorage.setItem('user_id', response.user_id);
         this.router.navigate(['/index']);
       },
       error => {

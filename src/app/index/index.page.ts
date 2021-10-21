@@ -16,6 +16,7 @@ export class IndexPage implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
+    this.userId = {'key': localStorage.getItem('user_id') };
     this.userdata = {
       author: localStorage.getItem('user_id'),
       origin: ''
@@ -33,9 +34,6 @@ export class IndexPage implements OnInit {
     )
   }
   onLogout() {
-    this.userId = {
-      'key': localStorage.getItem('user_id')
-    }
     console.log(this.userId);
     this.userService.logoutUser(this.userId).subscribe(
       response => {
@@ -50,6 +48,17 @@ export class IndexPage implements OnInit {
   }
   userDataGet() {
     this.userService.getUpdatedUsers(localStorage.getItem('user_id')).subscribe(
+      response => {
+        console.log(response);
+      },
+      error  => {
+        console.log(error);
+      }
+    );
+  }
+
+  userDataPut() {
+    this.userService.putUpdateUsers(this.userdata).subscribe(
       response => {
         console.log(response);
       },
