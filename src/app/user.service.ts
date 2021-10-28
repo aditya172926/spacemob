@@ -32,6 +32,6 @@ export class UserService {
     return this.http.post('http://127.0.0.1:8000/api/data/', data, {headers: this.authHeaders});
   }
   putUpdateUsers(data): Observable<any> {
-    return this.http.put('http://127.0.0.1:8000/api/data/' + data.id + '/', data, {headers: this.authHeaders});
+    return this.http.put('http://127.0.0.1:8000/api/data/' + 'AdityaS' + '/', data, {headers: this.authHeaders});
   }
 }
