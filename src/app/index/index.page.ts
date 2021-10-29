@@ -19,7 +19,9 @@ export class IndexPage implements OnInit {
     this.userId = {'key': localStorage.getItem('user_id') };
     this.userdata = {
       author: localStorage.getItem('user_id'),
-      origin: ''
+      origin: '',
+      continent: '',
+      country: ''
     };
   }
 
@@ -31,7 +33,7 @@ export class IndexPage implements OnInit {
       error => {
         console.log('error', error);
       }
-    )
+    );
   }
   onLogout() {
     console.log(this.userId);
