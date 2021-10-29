@@ -10,10 +10,10 @@
     <ion-input [(ngModel)]="userdata.origin" class="username" type="text" placeholder="Planet"></ion-input><br><br>
     <ion-input [(ngModel)]="userdata.continent" class="username" type="text" placeholder="Continent"></ion-input><br><br>
     <ion-input [(ngModel)]="userdata.country" class="username" type="text" placeholder="Country"></ion-input><br><br>
-    <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="userDataPost()" class="userData">Update</ion-button>
-    <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="userDataGet()" class="userData">Get</ion-button>
-    <ion-button expand="block" fill="clear" mode="ios" type="button" (click)="userDataPut()" class="userData">Put</ion-button>
 
-    <button (click) = "onLogout()">Logout</button>
+    <ion-button size = "small" fill="clear" mode="ios" type="button" (click)="userDataPost()" class="userData">Post</ion-button>
+    <ion-button size = "small" fill="clear" mode="ios" type="button" (click)="userDataGet()" class="userData">Show</ion-button>
+    <ion-button size = "small" fill="clear" mode="ios" type="button" (click)="userDataPut()" class="userData">Update</ion-button>
+    <ion-button (click) = "onLogout()">Logout</ion-button>
   </div>
 </ion-content>
